@@ -25,6 +25,7 @@ RUN echo "source tab-qiime" >> $HOME/.bashrc
 
 # Installing rescript
 RUN conda install -c conda-forge -c bioconda -c qiime2 -c defaults xmltodict
+RUN pip install xmltodict
 RUN pip install git+https://github.com/bokulich-lab/RESCRIPt.git
 
 # TODO: update this to point at the new homedir defined above. Keeping this
