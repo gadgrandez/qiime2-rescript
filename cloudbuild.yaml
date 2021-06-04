@@ -1,0 +1,10 @@
+steps:
+  # build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/qiime2', '.']
+  timeout: 3600s
+  # push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/qiime2']
+images:
+- gcr.io/$PROJECT_ID/qiime2
