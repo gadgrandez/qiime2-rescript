@@ -12,6 +12,7 @@ ENV XDG_CONFIG_HOME /home/qiime2
 RUN mkdir /home/qiime2
 WORKDIR /home/qiime2
 
+RUN apt update && apt install -y libssl-dev
 RUN conda update -q -y conda
 RUN conda install -q -y wget
 RUN apt-get install -y procps
